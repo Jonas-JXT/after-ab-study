@@ -23,7 +23,7 @@ The researcher toolbar and inspector are review aids outside the participant int
 
 ## Local data and limitations
 
-No hosting, backend connections, sign-in, analytics services or external response collection have been activated. All responses stay in this origin's browser localStorage. They do not follow the user to another device, browser or port. This is unsuitable for distributing the actual study until central storage and researcher authentication are connected. The local Results page is deliberately not authenticated.
+The static preview is published at https://jonas-jxt.github.io/after-ab-study/. No backend connections, sign-in, analytics services or central response collection have been activated. All responses stay in this origin's browser localStorage. They do not follow the user to another device, browser or port. This is unsuitable for distributing the actual study until central storage and researcher authentication are connected. The local Results page is deliberately not authenticated.
 
 The built-in samples are selectable simulated document records; no personal files are uploaded. Official source links open only if a participant explicitly selects them.
 
@@ -31,9 +31,9 @@ Each attempt records task discovery time, completion time, background-adjusted a
 
 Interrupted/reloaded attempts remain in the data as `in_progress`, rather than being silently treated as successes. Researchers must examine these alongside abandoned attempts. Local balancing is a preview mechanism; hosted assignment must be atomic and server-side.
 
-## Planned hosting phase — not implemented
+## Planned central response collection — not implemented
 
-After review: Vercel Hobby for the public study frontend, Supabase Free for durable anonymous session/event storage and researcher authentication, and server-controlled exports. Secrets belong in environment variables, never client code. Verify applicable free-tier allowances before connecting. Preserve event IDs for retry deduplication and add an explicit study-close control.
+The public review frontend currently uses GitHub Pages. Supabase Free is planned for durable anonymous session/event storage and researcher authentication, with protected researcher exports. Secrets belong in environment variables, never client code. Verify applicable free-tier allowances before connecting. Preserve event IDs for retry deduplication and add an explicit study-close control.
 
 ## Research basis
 
