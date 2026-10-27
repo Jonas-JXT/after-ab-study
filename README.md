@@ -1,39 +1,44 @@
-# After — A/B study preview
+# After — A/B usability study
 
-This standalone HTML/CSS/JavaScript prototype runs without installation or external libraries.
+Public study: https://jonas-jxt.github.io/after-ab-study/
 
-Start a local-only server from this folder:
+Private researcher workspace: https://jonas-jxt.github.io/after-ab-study/?view=research
+
+The static HTML/CSS/JavaScript frontend uses Supabase for anonymous response storage and researcher email sign-in. No installation or third-party browser libraries are required.
+
+## Study flow
+
+18 fictional estate-administration tasks, scrolling dashboard A, tabbed dashboard B, identical task details, built-in sample selection, submission confirmation, completion and feedback. No personal documents are uploaded. No automatic deadlines are inferred. The objective is identifying the next ready banking action using readiness, assignment and dependencies.
+
+The server balances A/B assignment across current-build participant attempts atomically. An assignment is registered before the timed dashboard opens. Preview attempts (`?variant=A` or `?variant=B`) are separately labelled and excluded from comparisons. Local preview controls appear on localhost and explicit preview links; ordinary hosted participants do not see them.
+
+## Storage and privacy
+
+Participants do not create accounts. Each new session receives a random, browser-held secret allowing only updates to that session. The database stores its hash, never the raw secret. Monotonic revisions protect against older retries overwriting newer snapshots. Pending responses retry after connection loss and on the next visit from the same browser. The completion screen reports when saving is acknowledged; participants should keep it open until saved.
+
+Only the approved, verified researcher email can read central responses or pause/resume new attempts. Database row-level policies enforce this independently of the UI. Public clients cannot read response rows, session secret hashes or the researcher allowlist. The public configuration contains only the project URL and publishable key, which is intended for browser use. Never include a database password, service-role or secret key in frontend files.
+
+Existing local-only historical attempts are not automatically uploaded. Central exports include centrally registered attempts, including unfinished and preview attempts. A reload starts a new attempt; inspect unfinished responses separately. Anonymous codes do not prove unique people, so distribute one study attempt per participant and review duplicates during analysis.
+
+## Researcher access and export
+
+Open the private workspace, enter the approved researcher email and use the emailed sign-in link in the same browser. The email code field is available when the configured email contains a code. Use Refresh to retrieve current responses and Download Excel for a genuine .xlsx workbook containing Participant Summary, Event Log and Data Dictionary. Raw JSON is also available. Sign out when using a shared device.
+
+New attempts can be paused from the researcher workspace; already registered participants can still finish. The project currently caps registered sessions at 500. The participant link remains public, so anonymous spam protection is limited; close collection after the study.
+
+Each attempt records task-discovery and completion times, active times subtracting recorded background intervals, taps, other-task openings, scroll distance/episodes, event history, ease rating and feedback. Exploratory clicks are not automatically classified as errors; use the event history to assess paths. Comparisons include only build `study-3-central-readiness`. Earlier protocol attempts should not be pooled.
+
+## Local preview
 
 ```sh
 python3 -m http.server 4173 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:4173`.
+Open http://127.0.0.1:4173/?variant=A or ?variant=B. With the committed public configuration, these previews save to Supabase with the preview label. Clear both configuration values to run a local-only copy. Do not distribute that copy for central collection.
 
-- **View A / View B** starts a review flow labelled `preview` in results.
-- **Restart** returns to the anonymous participant flow and assigns the next locally balanced variant when Begin is pressed.
-- **Results** shows attempts and lets you export a genuine `.xlsx` workbook or the raw JSON.
-- `?variant=A` / `?variant=B` selects a review variant. `?view=research` opens local results.
+## Hosting
 
-## Current scope
-
-18 fictional estate-administration tasks, scrolling dashboard A, tabbed dashboard B, identical task-detail and sample-document flow, explicit confirmation, completion screen, ease rating, and optional feedback. Incorrect tasks and document choices are recorded. No inferred deadlines are shown. The study asks participants to identify the next ready banking action using assignment, document readiness and dependencies. Daniel handles selected parallel tasks. A correct task submission is not bank acceptance or release of estate funds.
-
-The researcher toolbar and inspector are review aids outside the participant interface. They must be removed or separately gated in the participant deployment.
-
-## Local data and limitations
-
-The static preview is published at https://jonas-jxt.github.io/after-ab-study/. No backend connections, sign-in, analytics services or central response collection have been activated. All responses stay in this origin's browser localStorage. They do not follow the user to another device, browser or port. This is unsuitable for distributing the actual study until central storage and researcher authentication are connected. The local Results page is deliberately not authenticated.
-
-The built-in samples are selectable simulated document records; no personal files are uploaded. Official source links open only if a participant explicitly selects them.
-
-Each attempt records task discovery time, completion time, background-adjusted active times, taps, wrong-task openings, scroll displacement and episodes, events, ease rating and feedback. The Excel workbook contains Participant Summary, Event Log and Data Dictionary sheets. Preview attempts are included in exports but excluded from the on-screen participant comparison.
-
-Interrupted/reloaded attempts remain in the data as `in_progress`, rather than being silently treated as successes. Researchers must examine these alongside abandoned attempts. Local balancing is a preview mechanism; hosted assignment must be atomic and server-side.
-
-## Planned central response collection — not implemented
-
-The public review frontend currently uses GitHub Pages. Supabase Free is planned for durable anonymous session/event storage and researcher authentication, with protected researcher exports. Secrets belong in environment variables, never client code. Verify applicable free-tier allowances before connecting. Preserve event IDs for retry deduplication and add an explicit study-close control.
+GitHub Pages serves main branch root. Asset URLs are relative and .nojekyll disables Jekyll. Supabase authentication redirects are configured to the hosted researcher URL. Email delivery uses the project's configured authentication email service; if Supabase reports an email delivery restriction, configure an approved sender before relying on sign-in.
 
 ## Research basis
 
@@ -47,14 +52,3 @@ The public review frontend currently uses GitHub Pages. Supabase Free is planned
 
 Sources support the general tasks; statuses, task splitting, assignees, prerequisites and the case story are study adaptations.
 
-## Readiness-based revision
-
-Build `local-review-2-readiness` replaces invented countdowns with assignment and dependency information. Task details explicitly say no deadline has been added. Current participant comparisons include only this build; prior local attempts remain visible and exportable with their build identifier. This revision tests identifying the next banking action rather than ranking unrelated tasks by urgency.
-
-## GitHub Pages
-
-This repository is ready for GitHub Pages: all asset paths are relative and `.nojekyll` disables Jekyll processing. In the repository settings, select Pages → Deploy from a branch → main → /(root), then save.
-
-Publishing this static preview does **not** enable central response collection or researcher authentication. Results still belong to the current browser and website origin. The review controls remain visible so the two designs can be inspected. Do not distribute it as a live data-collection study until the backend and access controls are connected.
-
-No credentials, participant responses or real documents are included in the source files.

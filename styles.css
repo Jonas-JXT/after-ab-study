@@ -7,3 +7,7 @@
 .review-controls button{white-space:nowrap}.review-label{flex-shrink:0}@media(max-width:360px){#review-bar{padding:10px 9px}.review-controls{gap:4px}.review-controls button{padding:6px 7px}.review-label{gap:5px;font-size:9px}}
 
 .task-owner{font-size:10px;color:var(--muted);text-align:right}.task-card .task-foot span{line-height:1.5}
+
+[hidden]{display:none!important}.participant-mode #workspace{grid-template-columns:minmax(0,430px);justify-content:center}.participant-mode #inspector{display:none}.participant-mode{padding-top:0}.research-page input{width:100%;padding:14px;border:1px solid #aaa;border-radius:8px;font:inherit}.research-page .field{max-width:440px}.research-page>.button{max-width:440px}
+
+.participant-mode .phone{height:min(852px,100dvh)}@media(max-width:440px){.participant-mode .phone{height:100dvh}.participant-mode #workspace{margin:0}}
