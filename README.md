@@ -22,7 +22,7 @@ Existing local-only historical attempts are not automatically uploaded. Central 
 
 ## Researcher access and export
 
-Open the private workspace, enter the approved researcher email and use the emailed sign-in link in the same browser. The email code field is available when the configured email contains a code. Use Refresh to retrieve current responses and Download Excel for a genuine .xlsx workbook containing Participant Summary, Event Log and Data Dictionary. Raw JSON is also available. Sign out when using a shared device.
+Open the private workspace, enter the approved researcher email and use the emailed sign-in link in the same browser. Each browser and device needs its own sign-in. To use a laptop, open the emailed link on that laptop; opening it on a phone signs in only that phone. Use the newest email because each link works once. Use Refresh to retrieve current responses and Download Excel for a genuine .xlsx workbook containing Participant Summary, Event Log and Data Dictionary. Raw JSON is also available. Sign out when using a shared device.
 
 New attempts can be paused from the researcher workspace; already registered participants can still finish. The project currently caps registered sessions at 500. The participant link remains public, so anonymous spam protection is limited; close collection after the study.
 
