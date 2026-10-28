@@ -26,7 +26,7 @@ Open the private workspace, enter the approved researcher email and use the emai
 
 New attempts can be paused from the researcher workspace; already registered participants can still finish. The project currently caps registered sessions at 500. The participant link remains public, so anonymous spam protection is limited; close collection after the study.
 
-Each attempt records task-discovery and completion times, active times subtracting recorded background intervals, taps, other-task openings, scroll distance/episodes, event history, ease rating and feedback. Exploratory clicks are not automatically classified as errors; use the event history to assess paths. Comparisons include only build `study-3-central-readiness`. Earlier protocol attempts should not be pooled.
+Each attempt records task-discovery and completion times, active times subtracting recorded background intervals, taps, other-task openings, scroll distance/episodes, event history, ease rating and feedback. Exploratory clicks are not automatically classified as errors; use the event history to assess paths. Comparisons include only build `study-4-scenario-ownership`. Earlier protocol attempts should not be pooled.
 
 ## Local preview
 
@@ -52,3 +52,7 @@ GitHub Pages serves main branch root. Asset URLs are relative and .nojekyll disa
 
 Sources support the general tasks; statuses, task splitting, assignees, prerequisites and the case story are study adaptations.
 
+
+## Scenario and ownership revision
+
+The scenario introduces Mr Tan Bee Hoon and explains the task chain. Tasks assigned to Daniel show Awaiting Daniel and cannot be submitted by the participant. Build study-4-scenario-ownership keeps these attempts separate from earlier protocol responses; existing records are retained.
