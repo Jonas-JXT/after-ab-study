@@ -8,7 +8,7 @@ The static HTML/CSS/JavaScript frontend uses Supabase for anonymous response sto
 
 ## Study flow
 
-18 fictional estate-administration tasks, scrolling dashboard A, tabbed dashboard B, identical task details, built-in sample selection, submission confirmation, completion and feedback. No personal documents are uploaded. No automatic deadlines are inferred. The objective is identifying the next ready banking action using readiness, assignment and dependencies.
+17 fictional estate-administration tasks, scrolling dashboard A, tabbed dashboard B, identical task details, built-in sample selection, submission confirmation, completion and feedback. No personal documents are uploaded. No automatic deadlines are inferred. The objective is identifying the next ready banking action using readiness, assignment and dependencies.
 
 The server balances A/B assignment across current-build participant attempts atomically. An assignment is registered before the timed dashboard opens. Preview attempts (`?variant=A` or `?variant=B`) are separately labelled and excluded from comparisons. Local preview controls appear on localhost and explicit preview links; ordinary hosted participants do not see them.
 
@@ -26,7 +26,7 @@ Open the private workspace, enter the approved researcher email and use the emai
 
 New attempts can be paused from the researcher workspace; already registered participants can still finish. The project currently caps registered sessions at 500. The participant link remains public, so anonymous spam protection is limited; close collection after the study.
 
-Each attempt records task-discovery and completion times, active times subtracting recorded background intervals, taps, other-task openings, scroll distance/episodes, event history, ease rating and feedback. Exploratory clicks are not automatically classified as errors; use the event history to assess paths. Comparisons include only build `study-4-scenario-ownership`. Earlier protocol attempts should not be pooled.
+Each attempt records task-discovery and completion times, active times subtracting recorded background intervals, taps, other-task openings, scroll distance/episodes, event history, ease rating and feedback. Exploratory clicks are not automatically classified as errors; use the event history to assess paths. Comparisons include only build `study-5-five-ready-tasks`. Earlier protocol attempts should not be pooled.
 
 ## Local preview
 
@@ -56,3 +56,7 @@ Sources support the general tasks; statuses, task splitting, assignees, prerequi
 ## Scenario and ownership revision
 
 The scenario introduces Mr Tan Bee Hoon and explains the task chain. Tasks assigned to Daniel show Awaiting Daniel and cannot be submitted by the participant. Build study-4-scenario-ownership keeps these attempts separate from earlier protocol responses; existing records are retained.
+
+## Five ready tasks
+
+Build study-5-five-ready-tasks removes Record outstanding estate bills and invoices from both dashboards. Do Now contains five tasks; total task count is 17. Earlier responses remain available with their original build.
