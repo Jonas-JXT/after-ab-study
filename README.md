@@ -26,7 +26,7 @@ Open the private workspace, enter the approved researcher email and use the emai
 
 New attempts can be paused from the researcher workspace; already registered participants can still finish. The project currently caps registered sessions at 500. The participant link remains public, so anonymous spam protection is limited; close collection after the study.
 
-Each attempt records task-discovery and completion times, active times subtracting recorded background intervals, taps, other-task openings, scroll distance/episodes, event history, ease rating and feedback. Exploratory clicks are not automatically classified as errors; use the event history to assess paths. Comparisons include only build `study-5-five-ready-tasks`. Earlier protocol attempts should not be pooled.
+Each attempt records task-discovery and completion times, active times subtracting recorded background intervals, taps, other-task openings, scroll distance/episodes, event history, ease rating and feedback. Exploratory clicks are not automatically classified as errors; use the event history to assess paths. Comparisons include only build `study-6-pending-footer`. Earlier protocol attempts should not be pooled.
 
 ## Local preview
 
@@ -60,3 +60,7 @@ The scenario introduces Mr Tan Bee Hoon and explains the task chain. Tasks assig
 ## Five ready tasks
 
 Build study-5-five-ready-tasks removes Record outstanding estate bills and invoices from both dashboards. Do Now contains five tasks; total task count is 17. Earlier responses remain available with their original build.
+
+## Pending footer revision
+
+Build study-6-pending-footer changes the banking dependency footer to Pending and adds a dark border around the message in both dashboards. Earlier attempts remain stored with their original build.

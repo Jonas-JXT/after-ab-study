@@ -11,3 +11,5 @@
 [hidden]{display:none!important}.participant-mode #workspace{grid-template-columns:minmax(0,430px);justify-content:center}.participant-mode #inspector{display:none}.participant-mode{padding-top:0}.research-page input{width:100%;padding:14px;border:1px solid #aaa;border-radius:8px;font:inherit}.research-page .field{max-width:440px}.research-page>.button{max-width:440px}
 
 .participant-mode .phone{height:min(852px,100dvh)}@media(max-width:440px){.participant-mode .phone{height:100dvh}.participant-mode #workspace{margin:0}}
+
+.task-card .task-foot span{border:1px solid #575e5b;padding:5px 7px}

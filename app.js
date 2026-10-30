@@ -1,6 +1,6 @@
 'use strict';
 // Central collection is enabled only when the public Supabase configuration is present.
-const BUILD = 'study-5-five-ready-tasks';
+const BUILD = 'study-6-pending-footer';
 const OBJECTIVE = 'Identify the next action to move estate banking administration forward';
 const STORE = 'after-study-sessions-v1';
 const IS_LOCAL_PREVIEW = ['127.0.0.1','localhost','[::1]'].includes(location.hostname);
@@ -34,7 +34,7 @@ const SOURCES = {
 const TASKS = [
  {id:'cdp',status:'Do Now',title:'Prepare the CDP securities-transfer application',source:'cdp',detail:'Prepare the application and supporting documents for the estate’s CDP securities. Check the transfer requirements before submitting.',ready:'Supporting documents ready',requires:['Estate-transfer application','Court documents requested by CDP']},
  {id:'rental',status:'Do Now',title:'Compile the estate’s rental-income records',source:'records',detail:'Bring together rental-income statements and related expenses for the estate’s tax records.',ready:'Rental statements available',requires:['Rental-income statements','Supporting expense receipts']},
- {id:'probate-bank',status:'Do Now',title:'Submit probate documents to OCBC',source:'bank',detail:'The bank has requested the issued Grant of Probate and Schedule of Assets to continue the estate’s banking administration. The complete sample document package is ready.',ready:'Documents ready',dependency:'Next: bank document review → fund processing',requires:['Issued Grant of Probate','Schedule of Assets'],target:true},
+ {id:'probate-bank',status:'Do Now',title:'Submit probate documents to OCBC',source:'bank',detail:'The bank has requested the issued Grant of Probate and Schedule of Assets to continue the estate’s banking administration. The complete sample document package is ready.',ready:'Documents ready',dependency:'Pending: bank document review → fund processing',requires:['Issued Grant of Probate','Schedule of Assets'],target:true},
  {id:'iras-income',status:'Do Now',title:'Provide updated income information to IRAS',source:'tax',detail:'Provide the updated breakdown of income received up to the date of death. The estate records contain the information needed.',ready:'Income records available',requires:['Income breakdown','Relevant income statements']},
  {id:'closure',status:'Do Now',owner:'Daniel',title:'Review the bank’s account-closure instructions',source:'bank',detail:'Daniel will review the draft account-closure and transfer instructions. The bank still needs the executor’s court-document package before it can review and process the estate’s instructions.',ready:'Draft instructions available',requires:['Draft estate-account instructions']},
  {id:'estate-account',status:'Doing',owner:'Daniel',title:'Prepare the estate-account application',source:'bank',detail:'Daniel has started preparing the application. The bank-document handover and bank review are separate steps before the account can be opened.',ready:'Application started',requires:['Estate-account application','Executor details']},
