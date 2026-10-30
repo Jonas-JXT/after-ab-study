@@ -26,7 +26,7 @@ Open the private workspace, enter the approved researcher email and use the emai
 
 New attempts can be paused from the researcher workspace; already registered participants can still finish. The project currently caps registered sessions at 500. The participant link remains public, so anonymous spam protection is limited; close collection after the study.
 
-Each attempt records task-discovery and completion times, active times subtracting recorded background intervals, taps, other-task openings, scroll distance/episodes, event history, ease rating and feedback. Exploratory clicks are not automatically classified as errors; use the event history to assess paths. Comparisons include only build `study-6-pending-footer`. Earlier protocol attempts should not be pooled.
+Each attempt records task-discovery and completion times, active times subtracting recorded background intervals, taps, other-task openings, scroll distance/episodes, event history, ease rating and feedback. Exploratory clicks are not automatically classified as errors; use the event history to assess paths. Comparisons include only build `study-7-instructions-help`. Earlier protocol attempts should not be pooled.
 
 ## Local preview
 
@@ -64,3 +64,7 @@ Build study-5-five-ready-tasks removes Record outstanding estate bills and invoi
 ## Pending footer revision
 
 Build study-6-pending-footer changes the banking dependency footer to Pending and adds a dark border around the message in both dashboards. Earlier attempts remain stored with their original build.
+
+## Instructions help revision
+
+Build study-7-instructions-help shortens the scenario and adds the same top-right instructions button in both versions. Its dialog repeats the same instructions, dims the background, and closes via backdrop, close button or Escape. Opening and dismissing help are logged during timed attempts; the timer continues while help is open. Earlier builds remain stored separately.

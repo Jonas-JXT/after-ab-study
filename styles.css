@@ -13,3 +13,5 @@
 .participant-mode .phone{height:min(852px,100dvh)}@media(max-width:440px){.participant-mode .phone{height:100dvh}.participant-mode #workspace{margin:0}}
 
 .task-card .task-foot span{border:1px solid #575e5b;padding:5px 7px}
+
+.instructions-button{flex-shrink:0}.modal .icon-button{width:42px;min-width:42px;min-height:42px;padding:10px}.modal-shade[data-dismiss-backdrop="true"]{background:#17201799}.modal-shade[data-dismiss-backdrop="true"] .modal{gap:18px}
